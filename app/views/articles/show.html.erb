@@ -1,0 +1,14 @@
+<div class="navbar navbar-light bg-light">
+<h2>Wikinomous</h2>
+<button type="button" class="btn btn-light"><%=link_to "New Article", new_article_path %></button>
+</div>
+<div class="container">
+  <h1><%= @article[:title]%></h1>
+  <button type="button"class="btn btn-outline-primary"><%=link_to "edit", edit_article_path(@article[:id])%></button>
+  <button type="button" class="btn btn-outline-danger"><%=link_to "Delete", article_path(@article[:id]),
+  method: :delete, data: {confirm: "really dude?"}%></button>
+
+  <p><%= @article[:content]%></p>
+  <p><%= Faker::ChuckNorris.fact %></p>
+  <%= link_to "Back", articles_path %>
+</div>

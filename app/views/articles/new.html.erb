@@ -1,0 +1,8 @@
+<h1>Add new article</h1>
+<%= form_for @article do |d| %>
+  <%=d.label("Title") %>
+  <%=d.text_field(:title) %>
+  <%=d.label("Content") %>
+  <%=d.text_field :content %>
+  <%=d.submit("create") %>
+  <% end %>
